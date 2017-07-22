@@ -1,0 +1,5 @@
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessTypes\bin\Release\BusinessTypes.dll
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessTypes\bin\Release\BusinessTypes.pdb
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessTypes\obj\Release\BusinessTypes.csprojResolveAssemblyReference.cache
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessTypes\obj\Release\BusinessTypes.dll
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessTypes\obj\Release\BusinessTypes.pdb

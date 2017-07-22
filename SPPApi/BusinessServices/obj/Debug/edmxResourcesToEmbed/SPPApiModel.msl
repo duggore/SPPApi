@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SPPModelStoreContainer" CdmEntityContainer="SPPEntities">
+    <EntitySetMapping Name="CLIENTEs">
+      <EntityTypeMapping TypeName="SPPModel.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="CLIENTE_ID" ColumnName="CLIENTE_ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+          <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETALLE_PAGO">
+      <EntityTypeMapping TypeName="SPPModel.DETALLE_PAGO">
+        <MappingFragment StoreEntitySet="DETALLE_PAGO">
+          <ScalarProperty Name="DETALLE_PAGO_ID" ColumnName="DETALLE_PAGO_ID" />
+          <ScalarProperty Name="PAGO_ID" ColumnName="PAGO_ID" />
+          <ScalarProperty Name="PRESTAMO_ID" ColumnName="PRESTAMO_ID" />
+          <ScalarProperty Name="TASA_EFECTIVA" ColumnName="TASA_EFECTIVA" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETALLE_PRESTAMO">
+      <EntityTypeMapping TypeName="SPPModel.DETALLE_PRESTAMO">
+        <MappingFragment StoreEntitySet="DETALLE_PRESTAMO">
+          <ScalarProperty Name="DETALLE_PRESTAMO_ID" ColumnName="DETALLE_PRESTAMO_ID" />
+          <ScalarProperty Name="PRESTAMO_ID" ColumnName="PRESTAMO_ID" />
+          <ScalarProperty Name="MOVIMIENTO" ColumnName="MOVIMIENTO" />
+          <ScalarProperty Name="TIPO_MOVIMIENTO_ID" ColumnName="TIPO_MOVIMIENTO_ID" />
+          <ScalarProperty Name="DETALLE_PAGO_ID" ColumnName="DETALLE_PAGO_ID" />
+          <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAGOes">
+      <EntityTypeMapping TypeName="SPPModel.PAGO">
+        <MappingFragment StoreEntitySet="PAGO">
+          <ScalarProperty Name="PAGO_ID" ColumnName="PAGO_ID" />
+          <ScalarProperty Name="CLIENTE_ID" ColumnName="CLIENTE_ID" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRESTAMOes">
+      <EntityTypeMapping TypeName="SPPModel.PRESTAMO">
+        <MappingFragment StoreEntitySet="PRESTAMO">
+          <ScalarProperty Name="PRESTAMO_ID" ColumnName="PRESTAMO_ID" />
+          <ScalarProperty Name="CLIENTE_ID" ColumnName="CLIENTE_ID" />
+          <ScalarProperty Name="CANTIDAD_PRESTADA" ColumnName="CANTIDAD_PRESTADA" />
+          <ScalarProperty Name="TASA_INTERES" ColumnName="TASA_INTERES" />
+          <ScalarProperty Name="FECHA_PRESTAMO" ColumnName="FECHA_PRESTAMO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_MOVIMIENTO">
+      <EntityTypeMapping TypeName="SPPModel.TIPO_MOVIMIENTO">
+        <MappingFragment StoreEntitySet="TIPO_MOVIMIENTO">
+          <ScalarProperty Name="TIPO_MOVIMIENTO_ID" ColumnName="TIPO_MOVIMIENTO_ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

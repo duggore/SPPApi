@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SPPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="CLIENTE_ID" />
+    </Key>
+    <Property Name="CLIENTE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRIMER_APELLIDO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CORREO_ELECTRONICO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PAGOes" Relationship="Self.FK_PAGO_CLIENTE" FromRole="CLIENTE" ToRole="PAGO" />
+    <NavigationProperty Name="PRESTAMOes" Relationship="Self.FK_PRESTAMO_CLIENTE" FromRole="CLIENTE" ToRole="PRESTAMO" />
+  </EntityType>
+  <EntityType Name="DETALLE_PAGO">
+    <Key>
+      <PropertyRef Name="DETALLE_PAGO_ID" />
+    </Key>
+    <Property Name="DETALLE_PAGO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PAGO_ID" Type="Int32" Nullable="false" />
+    <Property Name="PRESTAMO_ID" Type="Int32" Nullable="false" />
+    <Property Name="TASA_EFECTIVA" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="MONTO" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="PAGO" Relationship="Self.FK_DETALLE_PAGO_PAGO" FromRole="DETALLE_PAGO" ToRole="PAGO" />
+    <NavigationProperty Name="PRESTAMO" Relationship="Self.FK_DETALLE_PAGO_PRESTAMO" FromRole="DETALLE_PAGO" ToRole="PRESTAMO" />
+    <NavigationProperty Name="DETALLE_PRESTAMO" Relationship="Self.FK_DETALLE_PRESTAMO_DETALLE_PAGO" FromRole="DETALLE_PAGO" ToRole="DETALLE_PRESTAMO" />
+  </EntityType>
+  <EntityType Name="DETALLE_PRESTAMO">
+    <Key>
+      <PropertyRef Name="DETALLE_PRESTAMO_ID" />
+    </Key>
+    <Property Name="DETALLE_PRESTAMO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRESTAMO_ID" Type="Int32" Nullable="false" />
+    <Property Name="MOVIMIENTO" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TIPO_MOVIMIENTO_ID" Type="Int32" Nullable="false" />
+    <Property Name="DETALLE_PAGO_ID" Type="Int32" />
+    <Property Name="COMENTARIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="DETALLE_PAGO" Relationship="Self.FK_DETALLE_PRESTAMO_DETALLE_PAGO" FromRole="DETALLE_PRESTAMO" ToRole="DETALLE_PAGO" />
+    <NavigationProperty Name="PRESTAMO" Relationship="Self.FK_DETALLE_PRESTAMO_PRESTAMO" FromRole="DETALLE_PRESTAMO" ToRole="PRESTAMO" />
+    <NavigationProperty Name="TIPO_MOVIMIENTO" Relationship="Self.FK_DETALLE_PRESTAMO_TIPO_MOVIMIENTO" FromRole="DETALLE_PRESTAMO" ToRole="TIPO_MOVIMIENTO" />
+  </EntityType>
+  <EntityType Name="PAGO">
+    <Key>
+      <PropertyRef Name="PAGO_ID" />
+    </Key>
+    <Property Name="PAGO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENTE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MONTO" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_PAGO_CLIENTE" FromRole="PAGO" ToRole="CLIENTE" />
+    <NavigationProperty Name="DETALLE_PAGO" Relationship="Self.FK_DETALLE_PAGO_PAGO" FromRole="PAGO" ToRole="DETALLE_PAGO" />
+  </EntityType>
+  <EntityType Name="PRESTAMO">
+    <Key>
+      <PropertyRef Name="PRESTAMO_ID" />
+    </Key>
+    <Property Name="PRESTAMO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENTE_ID" Type="Int32" Nullable="false" />
+    <Property Name="CANTIDAD_PRESTADA" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TASA_INTERES" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FECHA_PRESTAMO" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ESTADO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_PRESTAMO_CLIENTE" FromRole="PRESTAMO" ToRole="CLIENTE" />
+    <NavigationProperty Name="DETALLE_PAGO" Relationship="Self.FK_DETALLE_PAGO_PRESTAMO" FromRole="PRESTAMO" ToRole="DETALLE_PAGO" />
+    <NavigationProperty Name="DETALLE_PRESTAMO" Relationship="Self.FK_DETALLE_PRESTAMO_PRESTAMO" FromRole="PRESTAMO" ToRole="DETALLE_PRESTAMO" />
+  </EntityType>
+  <EntityType Name="TIPO_MOVIMIENTO">
+    <Key>
+      <PropertyRef Name="TIPO_MOVIMIENTO_ID" />
+    </Key>
+    <Property Name="TIPO_MOVIMIENTO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DETALLE_PRESTAMO" Relationship="Self.FK_DETALLE_PRESTAMO_TIPO_MOVIMIENTO" FromRole="TIPO_MOVIMIENTO" ToRole="DETALLE_PRESTAMO" />
+  </EntityType>
+  <Association Name="FK_PAGO_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="PAGO" Type="Self.PAGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="CLIENTE_ID" />
+      </Principal>
+      <Dependent Role="PAGO">
+        <PropertyRef Name="CLIENTE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRESTAMO_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="PRESTAMO" Type="Self.PRESTAMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="CLIENTE_ID" />
+      </Principal>
+      <Dependent Role="PRESTAMO">
+        <PropertyRef Name="CLIENTE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_PAGO_PAGO">
+    <End Role="PAGO" Type="Self.PAGO" Multiplicity="1" />
+    <End Role="DETALLE_PAGO" Type="Self.DETALLE_PAGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAGO">
+        <PropertyRef Name="PAGO_ID" />
+      </Principal>
+      <Dependent Role="DETALLE_PAGO">
+        <PropertyRef Name="PAGO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_PAGO_PRESTAMO">
+    <End Role="PRESTAMO" Type="Self.PRESTAMO" Multiplicity="1" />
+    <End Role="DETALLE_PAGO" Type="Self.DETALLE_PAGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRESTAMO">
+        <PropertyRef Name="PRESTAMO_ID" />
+      </Principal>
+      <Dependent Role="DETALLE_PAGO">
+        <PropertyRef Name="PRESTAMO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_PRESTAMO_DETALLE_PAGO">
+    <End Role="DETALLE_PAGO" Type="Self.DETALLE_PAGO" Multiplicity="0..1" />
+    <End Role="DETALLE_PRESTAMO" Type="Self.DETALLE_PRESTAMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DETALLE_PAGO">
+        <PropertyRef Name="DETALLE_PAGO_ID" />
+      </Principal>
+      <Dependent Role="DETALLE_PRESTAMO">
+        <PropertyRef Name="DETALLE_PAGO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_PRESTAMO_PRESTAMO">
+    <End Role="PRESTAMO" Type="Self.PRESTAMO" Multiplicity="1" />
+    <End Role="DETALLE_PRESTAMO" Type="Self.DETALLE_PRESTAMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRESTAMO">
+        <PropertyRef Name="PRESTAMO_ID" />
+      </Principal>
+      <Dependent Role="DETALLE_PRESTAMO">
+        <PropertyRef Name="PRESTAMO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_PRESTAMO_TIPO_MOVIMIENTO">
+    <End Role="TIPO_MOVIMIENTO" Type="Self.TIPO_MOVIMIENTO" Multiplicity="1" />
+    <End Role="DETALLE_PRESTAMO" Type="Self.DETALLE_PRESTAMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_MOVIMIENTO">
+        <PropertyRef Name="TIPO_MOVIMIENTO_ID" />
+      </Principal>
+      <Dependent Role="DETALLE_PRESTAMO">
+        <PropertyRef Name="TIPO_MOVIMIENTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SPPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CLIENTEs" EntityType="Self.CLIENTE" />
+    <EntitySet Name="DETALLE_PAGO" EntityType="Self.DETALLE_PAGO" />
+    <EntitySet Name="DETALLE_PRESTAMO" EntityType="Self.DETALLE_PRESTAMO" />
+    <EntitySet Name="PAGOes" EntityType="Self.PAGO" />
+    <EntitySet Name="PRESTAMOes" EntityType="Self.PRESTAMO" />
+    <EntitySet Name="TIPO_MOVIMIENTO" EntityType="Self.TIPO_MOVIMIENTO" />
+    <AssociationSet Name="FK_PAGO_CLIENTE" Association="Self.FK_PAGO_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTEs" />
+      <End Role="PAGO" EntitySet="PAGOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRESTAMO_CLIENTE" Association="Self.FK_PRESTAMO_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTEs" />
+      <End Role="PRESTAMO" EntitySet="PRESTAMOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_PAGO_PAGO" Association="Self.FK_DETALLE_PAGO_PAGO">
+      <End Role="PAGO" EntitySet="PAGOes" />
+      <End Role="DETALLE_PAGO" EntitySet="DETALLE_PAGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_PAGO_PRESTAMO" Association="Self.FK_DETALLE_PAGO_PRESTAMO">
+      <End Role="PRESTAMO" EntitySet="PRESTAMOes" />
+      <End Role="DETALLE_PAGO" EntitySet="DETALLE_PAGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_PRESTAMO_DETALLE_PAGO" Association="Self.FK_DETALLE_PRESTAMO_DETALLE_PAGO">
+      <End Role="DETALLE_PAGO" EntitySet="DETALLE_PAGO" />
+      <End Role="DETALLE_PRESTAMO" EntitySet="DETALLE_PRESTAMO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_PRESTAMO_PRESTAMO" Association="Self.FK_DETALLE_PRESTAMO_PRESTAMO">
+      <End Role="PRESTAMO" EntitySet="PRESTAMOes" />
+      <End Role="DETALLE_PRESTAMO" EntitySet="DETALLE_PRESTAMO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_PRESTAMO_TIPO_MOVIMIENTO" Association="Self.FK_DETALLE_PRESTAMO_TIPO_MOVIMIENTO">
+      <End Role="TIPO_MOVIMIENTO" EntitySet="TIPO_MOVIMIENTO" />
+      <End Role="DETALLE_PRESTAMO" EntitySet="DETALLE_PRESTAMO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

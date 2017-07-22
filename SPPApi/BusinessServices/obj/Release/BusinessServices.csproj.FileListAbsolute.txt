@@ -1,0 +1,13 @@
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\bin\Release\BusinessServices.dll.config
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\bin\Release\BusinessServices.dll
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\bin\Release\BusinessServices.pdb
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\bin\Release\BusinessTypes.dll
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\bin\Release\DataModel.dll
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\bin\Release\EntityFramework.dll
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\bin\Release\BusinessTypes.pdb
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\bin\Release\DataModel.pdb
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\bin\Release\DataModel.dll.config
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\bin\Release\EntityFramework.xml
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\obj\Release\BusinessServices.csprojResolveAssemblyReference.cache
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\obj\Release\BusinessServices.dll
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\BusinessServices\obj\Release\BusinessServices.pdb

@@ -1,0 +1,13 @@
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\obj\Debug\BusinessServices.csprojResolveAssemblyReference.cache
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\bin\Debug\BusinessServices.dll.config
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\bin\Debug\BusinessServices.dll
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\bin\Debug\BusinessServices.pdb
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\bin\Debug\BusinessTypes.dll
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\bin\Debug\DataModel.dll
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\bin\Debug\EntityFramework.dll
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\bin\Debug\BusinessTypes.pdb
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\bin\Debug\DataModel.pdb
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\bin\Debug\DataModel.dll.config
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\bin\Debug\EntityFramework.xml
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\obj\Debug\BusinessServices.dll
+C:\Users\mitch\Documents\Visual Studio 2017\Projects\SPPApi\BusinessServices\obj\Debug\BusinessServices.pdb

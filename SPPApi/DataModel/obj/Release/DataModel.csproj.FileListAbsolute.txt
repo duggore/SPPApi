@@ -1,0 +1,10 @@
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\DataModel\bin\Release\DataModel.dll.config
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\DataModel\bin\Release\DataModel.dll
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\DataModel\bin\Release\DataModel.pdb
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\DataModel\bin\Release\EntityFramework.dll
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\DataModel\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\DataModel\bin\Release\EntityFramework.xml
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\DataModel\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\DataModel\obj\Release\DataModel.csprojResolveAssemblyReference.cache
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\DataModel\obj\Release\DataModel.dll
+C:\Users\mitch\documents\visual studio 2017\Projects\SPPApi\DataModel\obj\Release\DataModel.pdb

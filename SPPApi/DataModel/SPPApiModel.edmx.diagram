@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5be471eda52e44a79054c33f827a230c" Name="Diagram1">
+        <EntityTypeShape EntityType="SPPModel.CLIENTE" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPPModel.DETALLE_PAGO" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPPModel.DETALLE_PRESTAMO" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPPModel.PAGO" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPPModel.PRESTAMO" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPPModel.TIPO_MOVIMIENTO" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="SPPModel.FK_PAGO_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="SPPModel.FK_PRESTAMO_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="SPPModel.FK_DETALLE_PAGO_PAGO" ManuallyRouted="false" />
+        <AssociationConnector Association="SPPModel.FK_DETALLE_PAGO_PRESTAMO" ManuallyRouted="false" />
+        <AssociationConnector Association="SPPModel.FK_DETALLE_PRESTAMO_DETALLE_PAGO" ManuallyRouted="false" />
+        <AssociationConnector Association="SPPModel.FK_DETALLE_PRESTAMO_PRESTAMO" ManuallyRouted="false" />
+        <AssociationConnector Association="SPPModel.FK_DETALLE_PRESTAMO_TIPO_MOVIMIENTO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
